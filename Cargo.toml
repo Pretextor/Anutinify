@@ -6,4 +6,4 @@ edition = "2024"
 [dependencies]
 eframe = "0.35.0"
 image = "0.25.10"
-pathfinder = "0.6.5"
+pathfinding = "4.15.0"
