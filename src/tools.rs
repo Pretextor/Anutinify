@@ -1,7 +1,7 @@
 use std::io;
-use image::{imageops::FilterType, GenericImageView, DynamicImage};
+use image::{imageops::FilterType, GenericImageView, RgbImage};
 
-pub fn downscale_crop() -> DynamicImage{
+pub fn downscale_crop() -> RgbImage{
     //crop and downscale image
     let file_in = get_args();
     let img = image::open(file_in).unwrap();
@@ -11,7 +11,8 @@ pub fn downscale_crop() -> DynamicImage{
     let y = (height - size) / 2;
 
     let cropped = img.crop_imm(x, y, size, size);
-    cropped.resize(256, 256, FilterType::Lanczos3)
+    let resized = cropped.resize(256, 256, FilterType::Lanczos3);
+    resized.to_rgb8()
 }
 fn get_args() -> String {
     let mut infile = String::new();
