@@ -227,6 +227,7 @@ dependencies = [
  "ndarray",
  "pathfinding",
  "polars",
+ "serde",
 ]
 
 [[package]]

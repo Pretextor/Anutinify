@@ -10,3 +10,4 @@ pathfinding = "4.15.0"
 kiddo = "5.3.1"
 ndarray = "0.17.2"
 polars = { version = "0.54.4", features = ["lazy"] }
+serde = { version = "1.0.229", features = ["derive"] }
